@@ -39,7 +39,10 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
 
   s.pod_target_xcconfig = {
-    "GCC_PREPROCESSOR_DEFINITIONS" => "MAS_SHORTHAND"
+    "GCC_PREPROCESSOR_DEFINITIONS" => [
+        "MAS_SHORTHAND",
+        'SWIFT_HEADERS=\"$(SWIFT_MODULE_NAME)-Swift.h\"'
+    ]
   }
 
   # Common modules. You may delete one of these module if you don't need it.

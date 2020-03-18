@@ -32,7 +32,7 @@ post_install do |installer|
   installer.pods_project.targets.each do |target|
     if target.name == '${POD_NAME}'
       target.build_configurations.each do |config|
-        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'MAS_SHORTHAND=1']
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'MAS_SHORTHAND=1', 'SWIFT_HEADERS=<$(SWIFT_MODULE_NAME)/$(SWIFT_MODULE_NAME)-Swift.h>']
       end
     end
   end
